@@ -96,7 +96,7 @@ class ChildNotificationListener : NotificationListenerService() {
                 val syncWork = OneTimeWorkRequestBuilder<SyncWorker>().build()
                 WorkManager.getInstance(applicationContext).enqueue(syncWork)
             } catch (e: Exception) {
-                Log.error(TAG, "Failed to persist notification locally: ${e.message}")
+                Log.e(TAG, "Failed to persist notification locally: ${e.message}")
             }
         }
     }
